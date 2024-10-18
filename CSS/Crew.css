@@ -1,0 +1,135 @@
+body{
+background: url('../assets//crew/background-crew-desktop.jpg') no-repeat;
+background-size: cover;
+}
+
+.Header{
+    margin-top: 2rem;
+}
+
+.crew-single{
+    display: none;
+}
+
+.crew-single.active{
+    display: flex;
+}
+
+
+.Crews{
+    display: grid;
+    place-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.Crews .wrapper{
+    display: grid;
+    margin: 0 3rem;
+    }
+.subtitle{
+    margin-top: 3rem;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+
+}
+.subtitle span{
+    color: rgba(255, 255, 255, .25);
+    margin-right: .5rem;
+    font-weight: 900;
+}
+.Crews-texts article{
+ align-items: center;
+ gap: 0rem;
+}
+
+.crew-single .crew-infos{
+    display: grid;
+    gap: 1rem;
+    font-family: 'Bellefair', sans-serif;
+    max-width: 65ch;
+}
+
+.crew-infos .crew-skill{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .4);
+    font-weight: 400;
+}
+
+.crew-name{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+}
+
+.crew-desc{
+    font-family: 'Barlow ', sans-serif;
+    color: rgba(255, 255, 255, 1);
+    line-height: 2rem;
+    max-width: 90ch;
+}
+
+.crew-img img{
+    z-index: -1px;
+    position: relative;
+    max-width: 100%;
+}
+
+
+.bullets-crew span{
+    display: block;
+    background: rgba(44, 44, 44, .6);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.bullets-crew span.active{
+    background: white;
+}
+.bullets-crew{
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    bottom: 2rem;
+    z-index: 10;
+}
+@media (max-width:850px) {
+    .crew-single.active{
+        display: grid;
+        justify-content: center;
+        margin-top: 2rem;
+        text-align: center;
+    }
+    
+.crew-img img{
+  max-width: 50%;
+}
+.bullets-crew{
+    bottom: 0;
+    right: 1rem;
+    margin: 2rem 0;
+    justify-self: center;
+}
+}
+
+@media (max-width:450px) {
+    .subtitle{
+        font-size: 1.5rem;
+    }
+    .crew-infos .crew-skill{
+        font-size: 1.5rem;
+    }
+    .crew-infos .crew-name{
+        font-size: 2rem;
+    }
+    .crew-infos .crew-desc{
+        font-size: .9rem;
+    }
+}

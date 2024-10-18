@@ -1,0 +1,151 @@
+body{
+    background: url('../assets/technology/background-technology-desktop.jpg')no-repeat center center;
+    background-size: cover;
+}
+.Header{
+    padding-top: 2rem;
+  }
+.Tech{
+    margin: 0 0 0 auto;
+    display: grid;
+    gap: 2rem;
+    margin-left: 16%;
+}
+.subtitle{
+    margin-top: 3rem;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.subtitle span{
+    color: rgba(255, 255, 255, .25);
+    margin-right: .5rem;
+    font-weight: 900;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: max-content minmax(450px,1fr) 1fr;
+    gap: 2rem 4rem;
+    
+    align-items: center;
+}
+.text_single{
+    display: none;
+}
+.text_single.active{
+    display: block;
+}
+.Bullets{
+    display: grid;
+    gap: 4rem;
+}
+.Bullets span{
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    max-width: max-content;
+    position: relative;
+}
+.Bullets span::after{
+    content: '';
+    display: block;
+    width: 70px;
+    height: 70px;
+    border: 1px solid white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: -1;
+}
+.Bullets span:hover::after, .Bullets span.active::after{
+    background: white;
+}
+.Bullets span:hover, .Bullets span.active{
+   color: black;
+}
+.Bullets span.active{
+    display: block;
+}
+.Tech_imgs{
+    display: block;
+    justify-self: end;
+}
+.Tech_imgs img{
+    max-width: 100%;
+    display: none;
+    object-fit: cover;
+}
+.Tech_imgs img.active{
+    display: block;
+}
+
+.text_single h3{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .4);
+    font-weight: 400;
+}
+.text_single h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+}
+.text_single p{
+    font-family: 'Barlow ', sans-serif;
+    color: rgba(255, 255, 255, 1);
+    line-height: 2rem;
+    max-width: 90ch;
+}
+
+@media (max-width:1100px) {
+    .Tech{
+        margin: 0;
+        text-align: center;
+        justify-items: center;
+        padding: 1rem;
+    }
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+    .Bullets{
+        order: 2;
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+    }
+    .Tech_texts{
+        order: 3;
+        display: grid;
+        justify-items: center;
+  
+    }
+    .Tech_imgs img{
+        width: 100vw;
+        max-height: 550px;
+        object-fit: contain;
+    }
+    
+}
+
+@media (max-width:450px) {
+    .subtitle{
+        font-size: 1.5rem;
+    }
+    .text_single h3{
+        font-size: 1.4rem;
+    }
+    .text_single h2{
+        font-size: 1.8rem;
+        margin: 1rem 0;
+    }
+    .text_single p{
+        font-size: .85rem;
+    }
+}

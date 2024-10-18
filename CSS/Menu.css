@@ -1,0 +1,136 @@
+.Header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: white;
+  position: relative;
+  max-height: 220px;
+
+}
+.LogoImg{
+  margin: 0 3rem;
+}
+.Line{
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, .3);
+  position: relative;
+  left: 20px;
+z-index: 100;
+}
+
+.MainNav{
+  background: rgba(255, 255, 255, .1);
+  display: flex;
+  backdrop-filter: blur(10px);
+  padding: 0 5rem;
+}
+.NavUl{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 1.25rem;
+  margin:0;
+}
+.NavUl li {
+ 
+  position: relative;
+  padding: 3rem 0;
+}
+.NavUl li::after{
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.NavUl li:hover::after, .NavUl .active::after{
+  background: white;
+}
+.NavUl li a{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: .5rem;
+  padding: 0rem 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.NavUl li a span{
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+@media (max-width:1100px) {
+  .Line{
+    display: none;
+  }
+  
+}
+@media (max-width:720px) {
+  .Header{
+    margin-top: 0;
+  }  
+  .LogoImg{
+margin-top: 1rem;
+  }
+  .MobileMenu{
+      display: block;
+      margin-right: 2rem;
+      display: grid;
+      gap: .3rem;
+      position: relative;
+      z-index: 100;
+    }
+    .MobileMenu span{
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: white;
+      transition: .3s ease;
+    }
+    .MobileMenu.active span:first-child{
+      transform: translate(0px, 8px) rotate(-45deg);
+    }
+    .MobileMenu.active span:last-child{
+      transform: translate(0px, -8px) rotate(45deg);
+    }
+    .MobileMenu.active span:nth-child(2){
+     opacity: 0;
+    }
+    .MobileMenu.active ~ .MainNav{
+      right: 0;
+    }
+    .MainNav{
+      position: absolute;
+      z-index: 90;
+      right: -100%;
+      top: -0rem;
+      padding: 1rem 5rem 1rem 2rem;
+      height: 100vh;
+      background: rgba(255, 255, 255, .2);
+      backdrop-filter: blur(20px);
+      transition: .3s ease;
+    }
+    .NavUl{
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: start;
+      gap: .5rem;
+      margin-top: 3rem;
+    }
+    .NavUl li{
+      font-size: 1.5rem;
+      padding: 1rem 0;
+    }
+    .NavUl li a{
+      padding: 0 !important;
+    }
+    .NavUl li::after{display: none;}
+    .numberNav{display: block;}
+}
